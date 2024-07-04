@@ -2,15 +2,15 @@ import React from 'react';
 
 const LandingPage = () => {
   const images = [
-    'https://picsum.photos/200/300',
-    'https://picsum.photos/200/300',
-    'https://picsum.photos/200/300',
-    'https://picsum.photos/200/300',
-    'https://picsum.photos/200/300',
-    'https://picsum.photos/200/300',
-    'https://picsum.photos/200/300',
-    'https://picsum.photos/200/300',
-    'https://picsum.photos/200/300',
+    './ton.png',
+    './not.jpg',
+    './ton.png',
+    './ton.png',
+    './ton.png',
+    './ton.png',
+    './ton.png',
+    './ton.png',
+    './ton.png',
   ];
 
   return (
