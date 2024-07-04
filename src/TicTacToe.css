@@ -1,0 +1,74 @@
+/* TicTacToe.css */
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .game-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .square {
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    border: 2px solid #999;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .square:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .game-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .status {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .reset-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .reset-button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 400px) {
+    .square {
+      width: 60px;
+      height: 60px;
+      font-size: 1.5rem;
+    }
+    
+    .game-title {
+      font-size: 2rem;
+    }
+  }
