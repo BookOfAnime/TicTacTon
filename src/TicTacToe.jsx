@@ -86,7 +86,7 @@ const TicTacToe = () => {
         <LandingPage />
 
         <section id="game" className="game">
-          <h2 className="game-title">Tic Tac Toe</h2>
+          <h2 className="game-title">Tic Tac TON</h2>
           <div className="game-board">
             <div className="board-row">
               {renderSquare(0)}
@@ -114,6 +114,7 @@ const TicTacToe = () => {
       <style jsx>{`
         .app {
           font-family: 'Arial', sans-serif;
+          background-color: #0098EA;
         }
         .navbar {
           background-color: #333;
@@ -162,7 +163,7 @@ const TicTacToe = () => {
           animation: fadeIn 1s ease-out;
         }
         .game-title {
-          font-size: 2rem;
+          font-size: 2.5rem;
           color: #333;
           margin-bottom: 20px;
         }
@@ -176,9 +177,9 @@ const TicTacToe = () => {
           display: flex;
         }
         .square {
-          width: 80px;
-          height: 80px;
-          font-size: 36px;
+          width: 120px; /* Increased size */
+          height: 120px; /* Increased size */
+          font-size: 48px; /* Increased font size */
           font-weight: bold;
           color: #333;
           background-color: #fff;
@@ -209,7 +210,7 @@ const TicTacToe = () => {
           align-items: center;
         }
         .status {
-          font-size: 1.2rem;
+          font-size: 1.5rem;
           margin-bottom: 15px;
           transition: all 0.3s ease;
         }
@@ -220,7 +221,7 @@ const TicTacToe = () => {
         }
         .reset-button {
           padding: 10px 20px;
-          font-size: 1rem;
+          font-size: 1.2rem;
           color: #fff;
           background-color: #4CAF50;
           border: none;

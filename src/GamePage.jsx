@@ -10,6 +10,7 @@ const GamePage = () => {
 
   const boardRef = useRef(null);
   const titleRef = useRef(null);
+  const lineRef = useRef(null);
 
   const calculateWinner = (squares) => {
     const lines = [
@@ -47,6 +48,39 @@ const GamePage = () => {
     });
   };
 
+  const drawWinningLine = (line) => {
+    const linePositions = [
+      { x1: '10%', y1: '20%', x2: '90%', y2: '20%' }, // top row
+      { x1: '10%', y1: '50%', x2: '90%', y2: '50%' }, // middle row
+      { x1: '10%', y1: '80%', x2: '90%', y2: '80%' }, // bottom row
+      { x1: '20%', y1: '10%', x2: '20%', y2: '90%' }, // left column
+      { x1: '50%', y1: '10%', x2: '50%', y2: '90%' }, // middle column
+      { x1: '80%', y1: '10%', x2: '80%', y2: '90%' }, // right column
+      { x1: '10%', y1: '10%', x2: '90%', y2: '90%' }, // diagonal from top-left to bottom-right
+      { x1: '90%', y1: '10%', x2: '10%', y2: '90%' }  // diagonal from top-right to bottom-left
+    ];
+
+    const winningLineIndex = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6]
+    ].findIndex(combo => combo.every(i => line.includes(i)));
+
+    const pos = linePositions[winningLineIndex];
+    gsap.fromTo(lineRef.current, {
+      attr: { x1: pos.x1, y1: pos.y1, x2: pos.x1, y2: pos.y1 }
+    }, {
+      attr: { x2: pos.x2, y2: pos.y2 },
+      duration: 1,
+      ease: 'power2.out'
+    });
+  };
+
   useEffect(() => {
     const result = calculateWinner(board);
     setWinner(result);
@@ -62,6 +96,7 @@ const GamePage = () => {
         duration: 0.5,
         boxShadow: '0 0 15px rgba(0, 255, 0, 0.5)'
       });
+      drawWinningLine(result.line);
     }
   }, [board]);
 
@@ -103,12 +138,16 @@ const GamePage = () => {
     setBoard(Array(9).fill(null));
     setXIsNext(true);
     setWinner(null);
+    gsap.set(lineRef.current, { attr: { x1: '10%', y1: '10%', x2: '10%', y2: '10%' } });
   };
 
   return (
     <div className="game-container">
       <h2 ref={titleRef} className="page-title">Tic Tac TON</h2>
-      <div ref={boardRef} className="game-board">
+      <div className="game-board" ref={boardRef}>
+        <svg className="winning-line" ref={lineRef}>
+          <line stroke="red" strokeWidth="4" />
+        </svg>
         {[...Array(9)].map((_, i) => renderSquare(i))}
       </div>
       <div className="game-info">
@@ -142,6 +181,7 @@ const GamePage = () => {
       </div>
 
       <style jsx>{`
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
         .game-container {
           display: flex;
           flex-direction: column;
@@ -149,6 +189,7 @@ const GamePage = () => {
           padding: 2rem;
           background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
           min-height: 100vh;
+          font-family: 'Poppins', sans-serif;
         }
         .page-title {
           font-size: 3rem;
@@ -156,6 +197,7 @@ const GamePage = () => {
           margin-bottom: 2rem;
         }
         .game-board {
+          position: relative;
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 10px;
@@ -183,6 +225,14 @@ const GamePage = () => {
           width: 80%;
           height: 80%;
           object-fit: contain;
+        }
+        .winning-line {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
         }
         .game-info {
           font-size: 1.5rem;

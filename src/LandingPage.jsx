@@ -37,6 +37,7 @@ const LandingPage = () => {
           align-items: center;
           position: relative;
           overflow: hidden;
+          background-color: #0098EA;
         }
         .image-gallery {
           position: absolute;
