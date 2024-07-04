@@ -107,7 +107,7 @@ const GamePage = () => {
 
   return (
     <div className="game-container">
-      <h2 ref={titleRef} className="page-title">Tic Tac Toe Game</h2>
+      <h2 ref={titleRef} className="page-title">Tic Tac TON</h2>
       <div ref={boardRef} className="game-board">
         {[...Array(9)].map((_, i) => renderSquare(i))}
       </div>
