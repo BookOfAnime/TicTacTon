@@ -3,13 +3,13 @@ import React from 'react';
 const LandingPage = () => {
   const images = [
     './ton.png',
-    './not.jpg',
+    './not.png',
     './ton.png',
+    './not.png',
     './ton.png',
+    './not.png',
     './ton.png',
-    './ton.png',
-    './ton.png',
-    './ton.png',
+    './not.png',
     './ton.png',
   ];
 
