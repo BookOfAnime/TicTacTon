@@ -38,7 +38,6 @@ const LandingPage = () => {
           align-items: center;
           position: relative;
           overflow: hidden;
-          background: linear-gradient(135deg, #0098EA, #00C9FF);
           padding: 2rem;
         }
         .image-gallery {

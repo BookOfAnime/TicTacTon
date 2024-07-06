@@ -104,7 +104,7 @@ const TONJourney = () => {
           padding: 20px;
           transition: background 0.5s ease;
         }
-        .bg-1 { background: linear-gradient(135deg, #0098EA, #00d1ff); }
+        .bg-1 { background: linear-gradient(135deg, #0098EA, #0098EA); }
         .bg-2 { background: linear-gradient(135deg, #ff6b6b, #feca57); }
         .bg-3 { background: linear-gradient(135deg, #54a0ff, #5f27cd); }
         .bg-4 { background: linear-gradient(135deg, #ff9ff3, #feca57); }
