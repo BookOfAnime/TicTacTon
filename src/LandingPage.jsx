@@ -38,7 +38,7 @@ const LandingPage = () => {
           align-items: center;
           position: relative;
           overflow: hidden;
-          background-color: #0098EA;
+          background: linear-gradient(135deg, #0098EA, #00C9FF);
           padding: 2rem;
         }
         .image-gallery {
@@ -55,77 +55,84 @@ const LandingPage = () => {
           z-index: 1;
         }
         .gallery-item {
-          border-radius: 10px;
+          border-radius: 15px;
           overflow: hidden;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          transition: transform 0.3s ease;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+          transition: all 0.5s ease;
           aspect-ratio: 1 / 1;
           display: flex;
           justify-content: center;
           align-items: center;
+          background-color: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(5px);
         }
         .gallery-item:hover {
-          transform: scale(1.05);
+          transform: scale(1.05) rotate(3deg);
+          box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
         }
         .gallery-item img {
-          width: 100%;
-          height: 100%;
+          width: 80%;
+          height: 80%;
           object-fit: contain;
-          transition: opacity 0.3s ease;
+          transition: all 0.5s ease;
         }
         .gallery-item:hover img {
-          opacity: 0.8;
+          transform: scale(1.1);
         }
         @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
+          0%, 100% { transform: translateY(0) rotate(0); }
+          50% { transform: translateY(-15px) rotate(5deg); }
         }
-        .move-0 { animation: float 6s infinite ease-in-out; }
-        .move-1 { animation: float 7s infinite ease-in-out; }
-        .move-2 { animation: float 8s infinite ease-in-out; }
-        .move-3 { animation: float 9s infinite ease-in-out; }
+        .move-0 { animation: float 8s infinite ease-in-out; }
+        .move-1 { animation: float 9s infinite ease-in-out 0.5s; }
+        .move-2 { animation: float 10s infinite ease-in-out 1s; }
+        .move-3 { animation: float 11s infinite ease-in-out 1.5s; }
         .content {
           position: relative;
           z-index: 2;
           text-align: center;
-          background-color: rgba(0, 0, 0, 0.7);
-          padding: 3rem;
-          border-radius: 15px;
+          background-color: rgba(255, 255, 255, 0.1);
+          padding: 4rem;
+          border-radius: 25px;
           color: white;
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
           backdrop-filter: blur(10px);
-          transition: transform 0.3s ease;
+          transition: all 0.5s ease;
         }
         .content:hover {
-          transform: translateY(-5px);
+          transform: translateY(-10px);
+          box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
         }
         h1 {
-          font-size: 4rem;
+          font-size: 5rem;
           margin-bottom: 1rem;
           text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+          background: linear-gradient(45deg, #FF8E3C, #FF4E50);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
         p {
-          font-size: 1.5rem;
-          margin-bottom: 2rem;
+          font-size: 1.8rem;
+          margin-bottom: 2.5rem;
           opacity: 0.9;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
         .cta-button {
           display: inline-block;
-          background-color: #4CAF50;
+          background: linear-gradient(45deg, #FF8E3C, #FF4E50);
           color: white;
-          padding: 15px 30px;
+          padding: 18px 36px;
           text-decoration: none;
           border-radius: 50px;
-          font-size: 1.2rem;
-          transition: all 0.3s;
+          font-size: 1.4rem;
+          transition: all 0.5s;
           text-transform: uppercase;
-          letter-spacing: 1px;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          letter-spacing: 2px;
+          box-shadow: 0 6px 12px rgba(255, 78, 80, 0.3);
         }
         .cta-button:hover {
-          background-color: #45a049;
-          transform: translateY(-2px);
-          box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+          transform: translateY(-5px) scale(1.05);
+          box-shadow: 0 10px 20px rgba(255, 78, 80, 0.5);
         }
         @media (max-width: 768px) {
           .image-gallery {
@@ -133,14 +140,14 @@ const LandingPage = () => {
             grid-template-rows: repeat(5, 1fr);
           }
           h1 {
-            font-size: 3rem;
+            font-size: 4rem;
           }
           p {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
           }
           .cta-button {
-            font-size: 1rem;
-            padding: 12px 24px;
+            font-size: 1.2rem;
+            padding: 15px 30px;
           }
         }
         @media (max-width: 480px) {
@@ -152,13 +159,17 @@ const LandingPage = () => {
             grid-template-rows: repeat(5, 1fr);
           }
           h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
           }
           p {
-            font-size: 1rem;
+            font-size: 1.2rem;
           }
           .content {
-            padding: 2rem;
+            padding: 2.5rem;
+          }
+          .cta-button {
+            font-size: 1rem;
+            padding: 12px 24px;
           }
         }
       `}</style>

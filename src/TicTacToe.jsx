@@ -50,7 +50,10 @@ const TicTacToe = () => {
   };
 
   const renderSquare = (i) => (
-    <button className={`square ${board[i] ? 'filled' : ''}`} onClick={() => handleClick(i)}>
+    <button 
+      className={`square ${board[i] ? 'filled' : ''} ${board[i] === 'X' ? 'x' : 'o'}`} 
+      onClick={() => handleClick(i)}
+    >
       {board[i]}
     </button>
   );
@@ -115,8 +118,9 @@ const TicTacToe = () => {
         .app {
           font-family: 'Arial', sans-serif;
           background-color: #0098EA;
-          margin: 0px;
-          padding: 0px;
+          margin: 0;
+          padding: 0;
+          min-height: 100vh;
         }
         .navbar {
           background-color: #333;
@@ -135,7 +139,7 @@ const TicTacToe = () => {
           padding: 0 20px;
         }
         .navbar-logo {
-          font-size: 1.5rem;
+          font-size: 1.8rem;
           font-weight: bold;
         }
         .navbar-menu {
@@ -146,9 +150,9 @@ const TicTacToe = () => {
         .navbar-menu a {
           color: white;
           text-decoration: none;
-          padding: 5px 10px;
-          border-radius: 5px;
-          transition: background-color 0.3s;
+          padding: 8px 16px;
+          border-radius: 20px;
+          transition: all 0.3s ease;
         }
         .navbar-menu a:hover, .navbar-menu a.active {
           background-color: rgba(255,255,255,0.2);
@@ -156,83 +160,90 @@ const TicTacToe = () => {
         main {
           max-width: 800px;
           margin: 0 auto;
-          padding: 20px;
+          padding: 40px 20px;
         }
         .game {
           display: flex;
           flex-direction: column;
           align-items: center;
-          animation: fadeIn 1s ease-out;
+          background-color: white;
+          border-radius: 20px;
+          padding: 40px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         .game-title {
-          font-size: 2.5rem;
+          font-size: 3rem;
           color: #333;
-          margin-bottom: 20px;
+          margin-bottom: 30px;
         }
         .game-board {
           background-color: #fff;
-          border-radius: 5px;
+          border-radius: 10px;
           overflow: hidden;
-          box-shadow: 0 0 10px rgba(0,0,0,0.1);
+          box-shadow: 0 0 20px rgba(0,0,0,0.1);
         }
         .board-row {
           display: flex;
         }
         .square {
-          width: 120px; /* Increased size */
-          height: 120px; /* Increased size */
-          font-size: 48px; /* Increased font size */
+          width: 100px;
+          height: 100px;
+          font-size: 48px;
           font-weight: bold;
           color: #333;
           background-color: #fff;
-          border: 1px solid #ccc;
-          margin: -1px -1px 0 0;
+          border: 2px solid #e0e0e0;
+          margin: 0;
           padding: 0;
           transition: all 0.3s ease;
           cursor: pointer;
         }
         .square:hover {
-          background-color: #f0f0f0;
+          background-color: #f5f5f5;
         }
         .square.filled {
           animation: pop 0.3s ease-out;
+        }
+        .square.x {
+          color: #FF4E50;
+        }
+        .square.o {
+          color: #0098EA;
         }
         @keyframes pop {
           0% { transform: scale(0.8); opacity: 0.5; }
           100% { transform: scale(1); opacity: 1; }
         }
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
         .game-info {
-          margin-top: 20px;
+          margin-top: 30px;
           display: flex;
           flex-direction: column;
           align-items: center;
         }
         .status {
-          font-size: 1.5rem;
-          margin-bottom: 15px;
-          transition: all 0.3s ease;
+          font-size: 1.8rem;
+          margin-bottom: 20px;
+          padding: 10px 20px;
+          border-radius: 30px;
+          background-color: #f0f0f0;
         }
         .status.winner {
-          color: #4CAF50;
-          font-weight: bold;
-          transform: scale(1.1);
-        }
-        .reset-button {
-          padding: 10px 20px;
-          font-size: 1.2rem;
           color: #fff;
           background-color: #4CAF50;
+          font-weight: bold;
+        }
+        .reset-button {
+          padding: 12px 24px;
+          font-size: 1.2rem;
+          color: #fff;
+          background-color: #0098EA;
           border: none;
-          border-radius: 5px;
+          border-radius: 30px;
           cursor: pointer;
-          transition: background-color 0.3s ease;
+          transition: all 0.3s ease;
         }
         .reset-button:hover {
-          background-color: #45a049;
+          background-color: #007bb8;
         }
       `}</style>
     </div>
