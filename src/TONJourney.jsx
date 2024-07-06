@@ -71,16 +71,16 @@ const TONJourney = () => {
           <p ref={addToRefs}>The Future of Cryptocurrency</p>
         </div>
         <div className="ton-journey-section bg-2">
-          <h2 ref={addToRefs}>Lightning Speed</h2>
-          <p ref={addToRefs}>Experience transactions as fast as sending a message.</p>
+          <h2 ref={addToRefs}>Its simple</h2>
+          <p ref={addToRefs}>First step its just to Tic.</p>
         </div>
         <div className="ton-journey-section bg-3">
-          <h2 ref={addToRefs}>Smart Contracts Reimagined</h2>
-          <p ref={addToRefs}>Unlock endless possibilities with TON's flexible smart contracts.</p>
+          <h2 ref={addToRefs}>Tac</h2>
+          <p ref={addToRefs}>Then just tac it.</p>
         </div>
         <div className="ton-journey-section bg-4">
-          <h2 ref={addToRefs}>Join the TON Revolution</h2>
-          <p ref={addToRefs}>Be part of the next generation of blockchain technology.</p>
+          <h2 ref={addToRefs}>TON</h2>
+          <p ref={addToRefs}>Earn a ton.</p>
         </div>
       </div>
 

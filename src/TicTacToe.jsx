@@ -115,6 +115,8 @@ const TicTacToe = () => {
         .app {
           font-family: 'Arial', sans-serif;
           background-color: #0098EA;
+          margin: 0px;
+          padding: 0px;
         }
         .navbar {
           background-color: #333;
